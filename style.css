@@ -19,7 +19,9 @@ body {
   font-family: "Barlow Semi Condensed", sans-serif;
   font-weight: 600; /*700*/
   background: radial-gradient(ellipse at top,hsl(214, 47%, 23%),hsl(237, 49%, 15%));
-  min-height: 100vh;
+  min-height: 100vh;/*vvimp*/
+ /* both min-height and height will result bodys size == full viewport*/
+  height: 100%; /*vvimp*/
   padding: 3rem 0 3rem 0;
 }
 header {
@@ -122,9 +124,6 @@ main {
 }
 .rule-btn {
   user-select: none;
-  /* position: absolute;
-  bottom: 2%;
-  right: 1%; */
   margin: 2rem 2rem 0.5rem 0 ;
   float: right;
   width: 120px;
@@ -217,8 +216,11 @@ main {
     bottom: initial;
     right: initial;
     float: initial;
-    margin: 1rem auto 1rem auto;
+    margin: 5rem auto 1rem auto;
   }
+  .bg-blur{
+    background-color: rgba(0, 0, 0, 0.0);
+}
 }
 @media (max-width:500px){
   
@@ -361,6 +363,26 @@ main {
   width: 80px;
   height: auto;
 }
+.visibility{
+  visibility: hidden;
+}
+.winner{
+  text-transform: uppercase;
+  font-size: 40px;
+  color: white;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.play-again-btn{
+  margin-top: 0.5rem;
+  background-color: white;
+  padding: 0.5rem 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.play-again-btn:hover{
+  color: orangered;
+}
 @media (max-width:1200px){
   .step-2-width{
     width: 80vw;
@@ -395,8 +417,8 @@ main {
   }
   .outcome{
     bottom: -5rem;
-    /* transform: translate(50%); */
   }
+
 }
 @media (max-width:600px){
   .step-2{
@@ -404,7 +426,11 @@ main {
     min-width: 300px;
     padding: 3rem 1rem 1.5rem 1rem;
   }
-
+  .step-2-width{
+    width: 95vw;
+    transition: width 1s;
+    padding: 3rem 1rem 0.5rem 1rem;
+  }
   .heading h2{
     font-size: 18px;
   }
@@ -446,6 +472,21 @@ main {
   .you-picked,.home-picked{
     width: 65px;
     height: auto;
+  }
+  .winner{
+    text-transform: uppercase;
+    font-size: 32px;
+    color: white;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  .play-again-btn{
+    margin-top: 0.5rem;
+    font-size: 14px;
+    background-color: white;
+    padding: 0.5rem 0;
+    border-radius: 5px;
+    cursor: pointer;
   }
 }
 @media (max-width:500px) {
@@ -542,16 +583,7 @@ main {
     height: auto;
   }
 }
-.visibility{
-  visibility: hidden;
-}
 
-.winner{
-  text-transform: uppercase;
-  font-size: 32px;
-  color: white;
-  letter-spacing: 2px;
-  text-align: center;
-}
+
 
 
