@@ -1,10 +1,20 @@
+//score update and get from local storage
+const scoreElm = document.querySelector(".score");
+let score;
+if (localStorage.getItem("score") == null) {
+   score = 0;
+   scoreElm.textContent = `${score}`;
+}else{
+  score = localStorage.getItem("score");
+  scoreElm.textContent = `${score}`;
+}
+
 const rules = document.querySelector(".rules");
 const ruleBtn = document.querySelector(".rule-btn");
 const bgBlur = document.querySelector(".bg-blur");
 const cross = document.querySelector(".cross");
 const main = document.querySelector("main");
 const wrap = document.querySelectorAll(".wrap");
-//step-2 elems
 const step2 = document.querySelector(".step-2");
 const pickedWrap1 = document.querySelector(".picked-wrap-1");
 const pickedWrap2 = document.querySelector(".picked-wrap-2");
@@ -51,24 +61,43 @@ for (let i = 0; i < wrap.length; i++) {
     setTimeout(() => {
       if (i == randomNumber) {
         step2.classList.add("step-2-width");
+        winner.textContent = "draw";
       }else if(i == 0 && randomNumber == 1){
+        score--;
+        localStorage.setItem("score",score);
+        scoreElm.textContent = `${score}`;
         step2.classList.add("step-2-width");
-        console.log("you lose");
+        winner.textContent = "you lose";
       }else if(i == 0 && randomNumber == 2){
+        score++;
+        localStorage.setItem("score",score);
+        scoreElm.textContent = `${score}`;
         step2.classList.add("step-2-width");
-        console.log("you win");
+        winner.textContent = "you win";
       }else if(i == 1 && randomNumber == 2){
+        score--;
+        localStorage.setItem("score",score);
+        scoreElm.textContent = `${score}`;
         step2.classList.add("step-2-width");
-        console.log("you lose");
+        winner.textContent = "you lose";
       }else if(i == 1 && randomNumber == 0){
+        score++;
+        localStorage.setItem("score",score);
+        scoreElm.textContent = `${score}`;
         step2.classList.add("step-2-width");
-        console.log("you win");
+        winner.textContent = "you win";
       }else if(i == 2 && randomNumber == 0){
+        score--;
+        localStorage.setItem("score",score);
+        scoreElm.textContent = `${score}`;
         step2.classList.add("step-2-width");
-        console.log("you lose");
+        winner.textContent = "you lose";
       }else if(i == 2 && randomNumber == 1){
+        score++;
+        localStorage.setItem("score",score);
+        scoreElm.textContent = `${score}`;
         step2.classList.add("step-2-width");
-        console.log("you win");
+        winner.textContent = "you win";
       }
     }, 2500);
     
@@ -77,3 +106,8 @@ for (let i = 0; i < wrap.length; i++) {
     }, 3000);
   })
 }
+
+playAgainBtn.addEventListener("click",function(){
+  main.classList.remove("hidden");
+  step2.classList.add("hidden");
+})
