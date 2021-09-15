@@ -11,6 +11,9 @@ const pickedWrap2 = document.querySelector(".picked-wrap-2");
 const pickedIcon2 = document.querySelector(".picked-icon-2");
 const youPicked = document.querySelector(".you-picked");
 const homePicked = document.querySelector(".home-picked");
+const outcome = document.querySelector(".outcome");
+const winner = document.querySelector(".winner");
+const playAgainBtn = document.querySelector(".play-again-btn");
 
 function hiddenAdd() {
   rules.classList.add("hidden");
@@ -44,20 +47,33 @@ for (let i = 0; i < wrap.length; i++) {
       homePicked.src = `./images/icon-${randomNumber+1}.svg`;
       pickedWrap2.classList.add(`img-bg-${randomNumber+1}`);
     }, 1500);
-    if (i == randomNumber) {
-      console.log("draw");
-    }else if(i == 0 && randomNumber == 1){
-      console.log("you lose");
-    }else if(i == 0 && randomNumber == 2){
-      console.log("you win");
-    }else if(i == 1 && randomNumber == 2){
-      console.log("you lose");
-    }else if(i == 1 && randomNumber == 0){
-      console.log("you win");
-    }else if(i == 2 && randomNumber == 0){
-      console.log("you lose");
-    }else if(i == 2 && randomNumber == 1){
-      console.log("you win");
-    }
+
+    setTimeout(() => {
+      if (i == randomNumber) {
+        step2.classList.add("step-2-width");
+      }else if(i == 0 && randomNumber == 1){
+        step2.classList.add("step-2-width");
+        console.log("you lose");
+      }else if(i == 0 && randomNumber == 2){
+        step2.classList.add("step-2-width");
+        console.log("you win");
+      }else if(i == 1 && randomNumber == 2){
+        step2.classList.add("step-2-width");
+        console.log("you lose");
+      }else if(i == 1 && randomNumber == 0){
+        step2.classList.add("step-2-width");
+        console.log("you win");
+      }else if(i == 2 && randomNumber == 0){
+        step2.classList.add("step-2-width");
+        console.log("you lose");
+      }else if(i == 2 && randomNumber == 1){
+        step2.classList.add("step-2-width");
+        console.log("you win");
+      }
+    }, 2500);
+    
+    setTimeout(() => {
+      outcome.classList.remove("visibility");
+    }, 3000);
   })
 }

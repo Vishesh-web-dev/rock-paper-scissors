@@ -19,8 +19,8 @@ body {
   font-family: "Barlow Semi Condensed", sans-serif;
   font-weight: 600; /*700*/
   background: radial-gradient(ellipse at top,hsl(214, 47%, 23%),hsl(237, 49%, 15%));
-  min-height: 100vh;
-  padding: 3rem 0 0rem 0;
+  /* min-height: 100vh; */
+  padding: 3rem 0 3rem 0;
 }
 header {
   user-select: none;
@@ -122,9 +122,6 @@ main {
 }
 .rule-btn {
   user-select: none;
-  /* position: absolute;
-  bottom: 2%;
-  right: 1%; */
   margin: 2rem 2rem 0.5rem 0 ;
   float: right;
   width: 120px;
@@ -184,6 +181,7 @@ main {
 .hidden{
     display: none;
 }
+
 @media (max-width:600px) {
   body{
     padding: 1rem 0 0 0;
@@ -272,6 +270,10 @@ main {
   text-align: center;
   padding: 3rem 2rem 0.5rem 2rem;
 }
+.step-2-width{
+  width: 90vw;
+  transition: width 1s;
+}
 .heading{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -289,6 +291,7 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: relative;
 }
 .picked-wrap-1{
   animation: trans1 1s;
@@ -305,6 +308,9 @@ main {
   border-radius: 50%;
   border-bottom: 10px solid rgba(0, 0, 0, 0.3);
   cursor: pointer;
+}
+.outcome{
+  position: absolute;
 }
 .img-bg-1{
   background: var(--paper-gradient);
@@ -352,6 +358,46 @@ main {
 .you-picked,.home-picked{
   width: 80px;
   height: auto;
+}
+@media (max-width:1200px){
+  .step-2-width{
+    width: 80vw;
+    transition: width 1s;
+  }
+  .img-picked{
+    justify-content: space-between;
+  }
+  .outcome{
+    right: 50%;
+    transform: translate(50%);
+  }
+}
+@media (max-width:1000px){
+  .step-2-width{
+    width: 90vw;
+    transition: width 1s;
+  }
+}
+@media (max-width:850px){
+  .step-2-width{
+    width: 90vw;
+    transition: width 1s;
+    padding: 3rem 1rem 0.5rem 1rem;
+  }
+  .rule-btn{
+    margin-bottom: 5rem;
+  }
+}
+@media (max-width:750px){
+  .step-2-width{
+    width: 90vw;
+    transition: width 1s;
+    padding: 3rem 1rem 0.5rem 1rem;
+  }
+  .outcome{
+    bottom: -5rem;
+    /* transform: translate(50%); */
+  }
 }
 @media (max-width:600px){
   .step-2{
@@ -496,6 +542,17 @@ main {
     width: 45px;
     height: auto;
   }
+}
+.visibility{
+  visibility: hidden;
+}
+
+.winner{
+  text-transform: uppercase;
+  font-size: 32px;
+  color: white;
+  letter-spacing: 2px;
+  text-align: center;
 }
 
 
