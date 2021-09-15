@@ -110,4 +110,19 @@ for (let i = 0; i < wrap.length; i++) {
 playAgainBtn.addEventListener("click",function(){
   main.classList.remove("hidden");
   step2.classList.add("hidden");
+  youPicked.src = ``;
+  pickedWrap1.classList.remove(`img-bg-${1}`);
+  pickedWrap1.classList.remove(`img-bg-${2}`);
+  pickedWrap1.classList.remove(`img-bg-${3}`);
+  
+  pickedWrap2.classList.remove("picked-wrap");
+  pickedIcon2.classList.remove("picked-icon");
+  homePicked.src = ``;
+  pickedWrap2.classList.remove(`img-bg-${1}`);
+  pickedWrap2.classList.remove(`img-bg-${2}`);
+  pickedWrap2.classList.remove(`img-bg-${3}`);
+  step2.classList.remove("step-2-width");
+
+  outcome.classList.add("visibility");
+
 })
