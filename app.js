@@ -68,36 +68,42 @@ for (let i = 0; i < wrap.length; i++) {
         scoreElm.textContent = `${score}`;
         step2.classList.add("step-2-width");
         winner.textContent = "you lose";
+        pickedWrap2.classList.add("winner-bg");
       }else if(i == 0 && randomNumber == 2){
         score++;
         localStorage.setItem("score",score);
         scoreElm.textContent = `${score}`;
         step2.classList.add("step-2-width");
         winner.textContent = "you win";
+        pickedWrap1.classList.add("winner-bg");
       }else if(i == 1 && randomNumber == 2){
         score--;
         localStorage.setItem("score",score);
         scoreElm.textContent = `${score}`;
         step2.classList.add("step-2-width");
         winner.textContent = "you lose";
+        pickedWrap2.classList.add("winner-bg");
       }else if(i == 1 && randomNumber == 0){
         score++;
         localStorage.setItem("score",score);
         scoreElm.textContent = `${score}`;
         step2.classList.add("step-2-width");
         winner.textContent = "you win";
+        pickedWrap1.classList.add("winner-bg");
       }else if(i == 2 && randomNumber == 0){
         score--;
         localStorage.setItem("score",score);
         scoreElm.textContent = `${score}`;
         step2.classList.add("step-2-width");
         winner.textContent = "you lose";
+        pickedWrap2.classList.add("winner-bg");
       }else if(i == 2 && randomNumber == 1){
         score++;
         localStorage.setItem("score",score);
         scoreElm.textContent = `${score}`;
         step2.classList.add("step-2-width");
         winner.textContent = "you win";
+        pickedWrap1.classList.add("winner-bg");
       }
     }, 2500);
     
@@ -110,10 +116,12 @@ for (let i = 0; i < wrap.length; i++) {
 playAgainBtn.addEventListener("click",function(){
   main.classList.remove("hidden");
   step2.classList.add("hidden");
+
   youPicked.src = ``;
   pickedWrap1.classList.remove(`img-bg-${1}`);
   pickedWrap1.classList.remove(`img-bg-${2}`);
   pickedWrap1.classList.remove(`img-bg-${3}`);
+  pickedWrap1.classList.remove("winner-bg");
   
   pickedWrap2.classList.remove("picked-wrap");
   pickedIcon2.classList.remove("picked-icon");
@@ -121,6 +129,8 @@ playAgainBtn.addEventListener("click",function(){
   pickedWrap2.classList.remove(`img-bg-${1}`);
   pickedWrap2.classList.remove(`img-bg-${2}`);
   pickedWrap2.classList.remove(`img-bg-${3}`);
+  pickedWrap2.classList.remove("winner-bg");
+
   step2.classList.remove("step-2-width");
 
   outcome.classList.add("visibility");

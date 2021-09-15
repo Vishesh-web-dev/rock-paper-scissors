@@ -301,6 +301,7 @@ main {
   animation: trans2 1s;
 }
 .picked-wrap{
+  z-index: -1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -370,6 +371,9 @@ main {
   letter-spacing: 2px;
   text-align: center;
 }
+.winner-bg{
+  box-shadow: 0 0 0 3em rgba(255, 255, 255, 0.07),0 0 0 6em rgba(255, 255, 255, 0.05),0 0 0 10em rgba(255, 255, 255, 0.03);
+}
 .play-again-btn{
   margin-top: 0.5rem;
   background-color: white;
@@ -404,6 +408,9 @@ main {
     width: 90vw;
     transition: width 1s;
     padding: 3rem 1rem 0.5rem 1rem;
+  }
+  .winner-bg{
+    box-shadow: 0 0 0 2em rgba(255, 255, 255, 0.07),0 0 0 5em rgba(255, 255, 255, 0.05),0 0 0 8em rgba(255, 255, 255, 0.03);
   }
 }
 @media (max-width:750px){
@@ -476,6 +483,9 @@ main {
     color: white;
     letter-spacing: 2px;
     text-align: center;
+  }
+  .winner-bg{
+    box-shadow: 0 0 0 1em rgba(255, 255, 255, 0.07),0 0 0 3em rgba(255, 255, 255, 0.05),0 0 0 5em rgba(255, 255, 255, 0.03);
   }
   .play-again-btn{
     margin-top: 0.5rem;
