@@ -218,9 +218,6 @@ main {
     float: initial;
     margin: 5rem auto 1rem auto;
   }
-  .bg-blur{
-    background-color: rgba(0, 0, 0, 0.0);
-}
 }
 @media (max-width:500px){
   
